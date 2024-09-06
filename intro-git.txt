@@ -1,0 +1,23 @@
+// Processo para a criação de um repositório git por terminal //
+
+git init - Serve para começar o versionamento (no terminal)
+
+git status  (oq tem no projeto/ situação do mesmo)
+
+git add . - Adicionar tudo que ta Untracked
+
+git add README.md - adicionar o README
+
+git commit -m 'alguma mensagem' - Commitar com mensagem
+
+git branch -M main - colocando a branch que vai ser mandado os arquivos do projeto
+
+git remote add origin linkdorepositório.git - Linkado com o repositório do github
+
+git push -u origin main - Enviando para a branch main
+
+
+
+
+
+
