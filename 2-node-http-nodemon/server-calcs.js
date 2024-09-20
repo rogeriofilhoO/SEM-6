@@ -9,19 +9,20 @@ const port = 3000;
 // Configuração inicial do servidor HTTP
 const server = http.createServer((req, res) => {
     res.statusCode = 200; // status ok
-    res.setHeader('Content-Type', 'text/plan; charset=utf-8'); // tipo do conteúdo
+    //no text/plain não tem como "estilizar", com isso dá para transformar em html com "text/html"
+    res.setHeader('Content-Type', 'text/html; charset=utf-8'); // tipo do conteúdo
 
     let q = url.parse(req.url, true).query; // consultando a string da url
 
     // Montagem da mensagem de retorno (template string)
     let txt = `
-        Nome ${q.p1}
-        Sobrenome: ${q.p2}
-    `;
-
+    Soma: ${q.n1} + ${q.n2} = <b>${Number(q.n1) + Number(q.n2)}</b><br>
+    Subtração: ${q.n1} - ${q.n2} = <b>${Number(q.n1) - Number(q.n2)}</b><br>
+    Multiplicação: ${q.n1} * ${q.n2} = <b>${Number(q.n1) * Number(q.n2)}</b><br>
+    Divisão: ${q.n1} / ${q.n2} = <b>${Number(q.n1) / Number(q.n2)}</b>`;
     res.write(txt);
-    // Concatenar na url é "&"
 
+    // Concatenar na url é "&"
     //res.write(txt); // mensagem no <body> da página
     //res.write('Olá! Este é um servidor HTTP e está rodando localmente.');
     res.end(); // final da resposta
