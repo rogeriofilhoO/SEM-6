@@ -6,7 +6,7 @@ const url = require('url');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-// Configuração inicial do servidor HTTP
+// Configuração inicial do servidor HTTP    
 const server = http.createServer((req, res) => {
     res.statusCode = 200; // status ok
     res.setHeader('Content-Type', 'text/plan; charset=utf-8'); // tipo do conteúdo
