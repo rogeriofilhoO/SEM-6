@@ -19,11 +19,15 @@ rotas.put('/docente', (req, res) => {
     res.send('Você esta na rota put para docente.');
 });
 
-
 // Rota para o método post
-
+rotas.post('/', (req, res) => {
+    res.send('Você esta na rota post para docente.');
+});
 
 // Rota para o método delete
+rotas.delete('/', (req, res) => {
+    res.send('Você esta na rota delete para docente.');
+});
 
 //exportar o código que manipula a rota para estudante
 module.exports = rotas;
