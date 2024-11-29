@@ -6,28 +6,34 @@ const rotas = express.Router();
 
 //Raiz
 rotas.get('/', (req, res) => {
-    res.send('Você está na raíz da rota docente.');
-});
-
-// Rota get para docente
-rotas.get('/docente', (req, res) => {
-    res.send('Você esta na rota get para docente.');
+    //Forma Objeto json
+    res.status(200).send({
+        mensagem: 'Você está na raiz da rota do docente.'
+    });
+    //Formas diferentes
+    //res.status(200).send('Você está na raíz da rota docente.');
+    //res.send('Você está na raíz da rota docente.');
 });
 
 // Rota put para estuante
-rotas.put('/docente', (req, res) => {
-    res.send('Você esta na rota put para docente.');
+rotas.put('/', (req, res) => {
+    res.status(200), send('Você esta na rota put para docente.');
 });
 
 // Rota para o método post
 rotas.post('/', (req, res) => {
-    res.send('Você esta na rota post para docente.');
+    res.status(201).send({
+        mensagem: 'docente cadastrado com sucesso.'
+    });
 });
 
 // Rota para o método delete
 rotas.delete('/', (req, res) => {
-    res.send('Você esta na rota delete para docente.');
+    res.status(202).send({
+        mensagem: 'docente excluído com sucesso.'
+    });
 });
 
-//exportar o código que manipula a rota para estudante
+
+//exportar o código que manipula a rota para docente
 module.exports = rotas;

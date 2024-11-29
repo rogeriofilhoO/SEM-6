@@ -6,22 +6,33 @@ const rotas = express.Router();
 
 //Raiz
 rotas.get('/', (req, res) => {
-    res.send('Você está na raíz da rota estudante.');
+    //Forma Objeto json
+    res.status(200).send({
+        mensagem: 'Você está na raiz da rota do Estudante.'
+    });
+    //Forma 'normal'
+    //res.status(200).send('Você está na raíz da rota estudante.');
+    //Forma antiga
+    //res.send('Você está na raíz da rota estudante.');
 });
 
 // Rota put para estuante
 rotas.put('/', (req, res) => {
-    res.send('Você esta na rota put para estudante.');
+    res.status(200),send('Você esta na rota put para Estudante.');
 });
 
 // Rota para o método post
 rotas.post('/', (req, res) => {
-    res.send('Você esta na rota post para estudante.');
+    res.status(201).send({
+        mensagem: 'Estudante cadastrado com sucesso.'
+    });
 });
 
 // Rota para o método delete
 rotas.delete('/', (req, res) => {
-    res.send('Você esta na rota delete para estudante.');
+    res.status(202).send({
+        mensagem: 'Estudante excluído com sucesso.'
+    });
 });
 
 

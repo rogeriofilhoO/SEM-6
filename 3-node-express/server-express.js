@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 
 // Utilizar as rotas
 app.use('/estudante', estudanteRotas);
+app.use('/docente', docenteRotas);
 
 
 
